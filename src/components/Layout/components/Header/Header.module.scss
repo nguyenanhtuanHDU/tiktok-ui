@@ -1,4 +1,5 @@
 $primary-color: rgba(254, 44, 85, 1);
+$gray-color: #f1f1f1;
 
 .wrapper {
   --search-button-width: 52px;
@@ -13,14 +14,17 @@ $primary-color: rgba(254, 44, 85, 1);
     margin: auto;
     .logo {
     }
+    .search,
+    .search-result {
+      width: 361px;
+    }
     .search {
       position: relative;
       display: flex;
       justify-content: space-between;
-      width: 361px;
       height: 46px;
       border-radius: 88px;
-      background-color: #f1f1f2;
+      background-color: $gray-color;
       overflow: hidden;
       border: 1.5px solid transparent;
       &:focus-within {
@@ -36,10 +40,11 @@ $primary-color: rgba(254, 44, 85, 1);
         padding: 12px 16px;
         background-color: transparent;
         caret-color: $primary-color;
-        &:not(:placeholder-shown) ~.search-btn{
-          color: rgba(22, 24, 35, 1);;
+        &:not(:placeholder-shown) ~ .search-btn {
+          color: rgba(22, 24, 35, 1);
         }
       }
+
       .loading,
       .clear {
         position: absolute;
@@ -49,7 +54,7 @@ $primary-color: rgba(254, 44, 85, 1);
         font-size: 16px;
         color: #a7a7ab;
       }
-      .loading{
+      .loading {
       }
       .clear {
       }
@@ -59,7 +64,7 @@ $primary-color: rgba(254, 44, 85, 1);
         align-items: center;
         color: #9d9d9e;
         width: var(--search-button-width);
-        background-color: #f1f1f2;
+        background-color: $gray-color;
         height: 46px;
         font-size: 19px;
         margin: auto;
@@ -78,6 +83,14 @@ $primary-color: rgba(254, 44, 85, 1);
       margin: auto;
       background-color: rgba(22, 24, 35, 0.12);
     }
-    
+  }
+  .search-result {
+    .search-title {
+      color: rgba(22, 24, 35, 0.5);
+      font-size: 14px;
+      padding: 5px 12px;
+      line-height: 20px;
+      font-weight: 600;
+    }
   }
 }
