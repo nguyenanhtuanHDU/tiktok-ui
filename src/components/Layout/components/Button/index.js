@@ -11,15 +11,31 @@ function Button({
   href,
   primary = false,
   outline = false,
+  disabled = false,
+  rounded = false,
+  small = false,
+  large = false,
+  className,
   target,
-  children,
   onClick,
+  onMouseDown,
+  leftIcon,
+  children,
 }) {
   let Tag = 'button'
-  const classes = cx('wrapper', { primary }, { outline })
+  const classes = cx('wrapper', {
+    [className]: className,
+    primary,
+    outline,
+    disabled,
+    rounded,
+    small,
+    large,
+  })
 
   const _props = {
     onClick,
+    onMouseDown,
     target,
   }
 
@@ -30,6 +46,13 @@ function Button({
     _props.href = href
     Tag = 'a'
   }
+  if (disabled) {
+    Object.keys(_props).forEach((prop) => {
+      if (prop.startsWith('on') && typeof _props[prop] === 'function') {
+        delete _props[prop]
+      }
+    })
+  }
 
   return (
     <Tag
@@ -37,7 +60,8 @@ function Button({
       className={classes}
       {..._props}
     >
-      <span>{children}</span>
+      {leftIcon && <span className={cx('left-icon')}>{leftIcon}</span>}
+      <span className="title">{children}</span>
     </Tag>
   )
 }

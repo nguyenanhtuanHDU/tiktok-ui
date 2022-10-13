@@ -1,27 +1,77 @@
 .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 16px;
   font-weight: 700;
+  line-height: 24px;
   min-width: 100px;
   padding: 6px 8px;
   border-radius: 4px;
   cursor: pointer;
-  span {
-    line-height: 24px;
+  background-color: var(--white-color);
+  border: 1px solid rgba(22, 24, 35, 0.12);
+  &:hover {
+    background-color: rgba(22, 24, 35, 0.03);
+  }
+  .left-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
-.primary {
-  background-color: var(--primary-color);
-  color: var(--white-color);
+
+// type Button
+.rounded {
+  border-radius: 88px;
+  box-shadow: rgb(0 0 0 / 6%) 0px 2px 8px;
+  min-width: 90px;
+  color: rgba(22, 24, 35, 0.75);
+  padding: 0px 8px;
+  font-size: 14px;
   &:hover {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)),
-      #fe2c55;
+    border-color: rgba(22, 24, 35, 0.2);
+    background-color: #fff;
   }
 }
 .outline {
   background-color: var(--white-color);
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
+  font-weight: 600;
   &:hover {
     background-color: rgba(254, 44, 85, 0.06);
+    border: 1px solid var(--primary-color);
   }
+}
+.primary {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: 1px solid var(--primary-color);
+  &:hover {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)),
+      #fe2c55;
+    border: 1px solid var(--primary-color);
+  }
+}
+.disabled {
+  pointer-events: none;
+  cursor: none;
+  opacity: 0.5;
+  user-select: none;
+}
+
+// size Button
+.small {
+  padding: 1px 8px;
+  min-width: 88px;
+}
+.large {
+  padding: 11px 8px;
+  min-width: 168px;
+  font-size: 18px;
+  width: 100%;
 }

@@ -83,6 +83,10 @@ $gray-color: #f1f1f1;
       margin: auto;
       background-color: rgba(22, 24, 35, 0.12);
     }
+    .action {
+      display: flex;
+      gap: 16px;
+    }
   }
   .search-result {
     .search-title {

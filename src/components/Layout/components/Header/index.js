@@ -81,12 +81,13 @@ function Header() {
           </form>
         </Tippy>
         <div className={cx('action')}>
-          <Button>
-            <FontAwesomeIcon icon={faPlus} />
-            Tải lên
+          <Button leftIcon={<FontAwesomeIcon icon={faPlus} />}>Tải lên</Button>
+          <Button
+            primary
+            className={cx('custom-login')}
+          >
+            Đăng nhập
           </Button>
-
-          <Button primary>Đăng nhập</Button>
         </div>
       </div>
     </div>
